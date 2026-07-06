@@ -2,9 +2,8 @@
 # tasks file for argocd
 - name: Install ArgoCD
   kubernetes.core.k8s:
-
     state: present
-
+    namespace: "{{ argocd_namespace }}"
     src: https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 - name: Wait for ArgoCD Server
