@@ -1,0 +1,11 @@
+---
+# tasks file for verify
+
+- name: Get pods
+  command: kubectl get pods -n argocd
+
+- name: Get services
+  command: kubectl get svc -n argocd
+
+- name: Get nodes
+  command: kubectl get nodes

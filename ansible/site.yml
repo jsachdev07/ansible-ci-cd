@@ -1,0 +1,10 @@
+---
+- name: Configure EKS Cluster
+  hosts: local
+  gather_facts: false
+
+  roles:
+    - configure_eks
+    - namespace
+    - argocd
+    - verify
