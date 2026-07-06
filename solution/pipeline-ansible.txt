@@ -69,7 +69,8 @@ stage('Configure EKS using Ansible') {
             sh """
             ansible-playbook -i ansible/inventory ansible/site.yml \
                 -e cluster_name=${CLUSTER_NAME} \
-                -e aws_region=${AWS_REGION}
+                -e aws_region=${AWS_REGION} \
+                -e argocd_namespace=argocd
             """
         }
     }
