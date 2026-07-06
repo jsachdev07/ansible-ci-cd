@@ -67,7 +67,7 @@ stage('Configure EKS using Ansible') {
     steps {
         withAWS(credentials:'aws-creds', region:"${AWS_REGION}") {
             sh """
-            ansible-playbook ansible/site.yml \
+            ansible-playbook -i ansible/inventory ansible/site.yml \
                 -e cluster_name=${CLUSTER_NAME} \
                 -e aws_region=${AWS_REGION}
             """
